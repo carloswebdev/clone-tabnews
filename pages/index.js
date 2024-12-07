@@ -8,7 +8,6 @@ function Home() {
       <h1>Parabéns!</h1>
     </html>
   );
-
   return retorno;
 }
 
