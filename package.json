@@ -7,6 +7,7 @@
     "dev": "next dev",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
+    "lint:watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
     "test": "jest",
     "test:watch": "jest --watch"
   },
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "jest": "^29.6.2",
+    "onchange": "^7.1.0",
     "prettier": "^3.4.2"
   }
 }
