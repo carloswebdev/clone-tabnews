@@ -7,9 +7,11 @@ test("GET to /api/v1/status should return 200", async () => {
   const parsedUpdatedAt = new Date(responseBody.updated_at).toISOString();
   expect(responseBody.updated_at).toEqual(parsedUpdatedAt);
 
-  if (process.env.NODE_ENV == "development") {
+  if (process.env.NODE_ENV == "development" || "test") {
     expect(responseBody.dependencies.database.version).toEqual("16.0");
-  } else {
+  }
+
+  if (process.env.NODE_ENV == "production") {
     expect(responseBody.dependencies.database.version).toEqual("16.6");
   }
 
